@@ -1,0 +1,12 @@
+@use './styles/partials/globals' as *;
+@use './styles/partials/variables' as *;
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient($color-darkblue, $color-midblue);
+    color: white;
+}

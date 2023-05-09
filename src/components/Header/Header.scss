@@ -1,0 +1,59 @@
+@use '../../styles/partials/variables' as *;
+
+.header {
+    display: flex;
+    // background-color: lightblue;
+    padding: 1rem;
+    align-items: center;
+    width: 100%;
+
+    &__nav {
+        display: flex;
+        width: 100%;
+    }
+
+    &__logo {
+        margin-right: 2rem;
+    }
+
+    &__search {
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.25);
+        width: 40%;
+
+        &:focus {
+            background-color: $color-white;
+            color: $color-darkblue;
+        }
+
+        &::placeholder {
+            font-size: 0.9rem;
+            color: white;
+        }
+    }
+
+    &__profile {
+        display: flex;
+        margin-left: auto;
+
+        &-login {
+            padding: 0 1.5rem;
+            background-color: $color-fucshia;
+            border: none;
+            border-radius: 20px;
+            color: $color-white;
+            font-variation-settings: 'wght' 600;
+            font-size: 1rem;
+        }
+
+        &-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 20px;
+            background-color: lightgray;
+            margin-left: 1rem;
+        }
+    }
+}
