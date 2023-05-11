@@ -1,0 +1,33 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 50rem;
+
+    &__article {
+        width: 60%;
+        padding: 1rem;
+        
+        &-heading {
+            font-size: 2rem;
+            font-variation-settings: 'wght' 600;
+            padding-bottom: 1rem;
+        }
+
+        &-para {
+            font-size: 1.1rem;
+            line-height: 1.75rem;
+        }
+    }
+    
+    &__mesh {
+        width: 40%;
+        height: 20rem;
+    }
+}
