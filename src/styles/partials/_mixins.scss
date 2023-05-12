@@ -1,0 +1,27 @@
+@use "./variables" as *;
+
+@mixin button-pink {
+  padding: 0.75rem 1.5rem;
+  background-color: $color-fucshia;
+  border: none;
+  border-radius: 30px;
+  color: $color-white;
+  font-variation-settings: "wght" 600;
+
+  &:hover {
+    background-color: $color-fucshia-hover;
+  }
+
+  &:active {
+    background-color: $color-lightblue;
+  }
+}
+
+@mixin button-blue {
+  padding: 0.75rem 1.5rem;
+  background-color: $color-lightblue;
+  border: none;
+  border-radius: 30px;
+  color: $color-white;
+  font-variation-settings: "wght" 600;
+}
