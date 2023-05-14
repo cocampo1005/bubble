@@ -1,4 +1,6 @@
 import './SignupPage.scss';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 function SignupPage() {
@@ -19,12 +21,19 @@ function SignupPage() {
                         <label className='signup__password-label label'>PASSWORD</label>
                         <input className='signup__password-input input' type='text' ></input> 
                     </div>
-                    <button className='signup__form-button'>SIGN UP WITH EMAIL</button>
+                    <motion.button
+                        className='signup__form-button'
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        SIGN UP WITH EMAIL
+                    </motion.button>
                 </form>
                 <h4 className='signup__or'>OR SIGN UP WITH</h4>
                 <div className='signup__footer'>
-                    <p className='signup__footer-text'>Don't have an account?</p>
-                    {/* <Link className='signup__footer-link' to={'/signup'}>Sign Up</Link> */}
+                    <p className='signup__footer-text'>Have an account already? </p>
+                    <Link 
+                    className='signup__footer-link' to={'/login'}>Login</Link>
                 </div>
             </div>
         </section>

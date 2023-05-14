@@ -11,7 +11,7 @@
 
     &__card {
         width: 23rem;
-        height: 27rem;
+        height: 31rem;
         background-image: linear-gradient($color-midblue, rgb(28, 23, 75));
         border-radius: 40px;
         box-shadow: 0 5px 40px rgba(155, 7, 118, 0.5);
@@ -39,13 +39,17 @@
         }
     }
 
-    &__username {
-        padding-bottom: 1rem;
-    }
+    // &__email {
 
-    &__password {
-        padding-bottom: 1rem;
-    }
+    // }
+
+    // &__username {
+    //     padding-bottom: 1rem;
+    // }
+
+    // &__password {
+    //     padding-bottom: 1rem;
+    // }
 
     &__or {
         align-self: center;
@@ -63,7 +67,7 @@
             font-variation-settings: 'wght' 600;
 
             &:hover {
-                color: rgb(244, 194, 224);
+                color: rgb(102, 227, 227);
             }
         }
     }
@@ -73,6 +77,7 @@
     &-container {
         display: flex;
         flex-direction: column;
+        padding-bottom: 1rem;
     }
 
     width: 100%;

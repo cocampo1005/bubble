@@ -1,0 +1,42 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.modal {
+    width: 50rem;
+    height: 40rem;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    border: 4px solid $color-fucshia;
+    background-image: linear-gradient($color-darkblue, $color-midblue);
+
+    &::backdrop {
+        background-image: linear-gradient(45deg, $color-purple, $color-midblue, $color-darkblue, $color-midblue, $color-purple);
+        opacity: 0.9;
+    }
+
+    &[open] {
+        animation: zoom-in 400ms forwards;
+    }
+
+    @keyframes zoom-in {
+        0% {
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+        80% {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    &-content {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
