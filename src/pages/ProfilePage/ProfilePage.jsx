@@ -45,27 +45,27 @@ function ProfilePage() {
           >
             U P L O A D
           </motion.button>
-          <Modal open={modalOpen} handleClose={close} closeOnOutsideClick >
+          <Modal open={modalOpen} handleClose={close}>
             <DropFileInput />
             <div className="modal__buttons">
-              <motion.button 
-            className="modal__button-close" 
-            onClick={close}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-            >
-              Close
-            </motion.button>
-            <motion.button 
-            className="modal__button-upload" 
-            onClick={close}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-            >
-              Upload
-            </motion.button>
+              <motion.button
+                className="modal__button-close"
+                onClick={close}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Close
+              </motion.button>
+              <motion.button
+                className="modal__button-upload"
+                onClick={close}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Upload
+              </motion.button>
             </div>
-            
+
 
           </Modal>
         </div>

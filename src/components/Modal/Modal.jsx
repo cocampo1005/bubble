@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import './Modal.scss';
 
-export default function Modal({ closeOnOutsideClick, handleClose, open, children }) {
+export default function Modal({ handleClose, open, children }) {
     const dialogRef = useRef(null);
 
     useEffect(() => {
@@ -15,7 +15,6 @@ export default function Modal({ closeOnOutsideClick, handleClose, open, children
 
     function handleOutsideClick(event) {
         if (event.target === dialogRef.current) {
-            // event.stopPropagation();
             handleClose();
         }
     }
