@@ -63,7 +63,7 @@ function SignupPage() {
                 setEmail('');
                 setPassword('');
                 setConfirmPassword('');
-                dispatch({ type: 'LOGIN', payload: res.user })
+                dispatch({ type: 'LOGIN', payload: res.user });
                 setSuccessfulReg(true);
 
                 setTimeout(() => {
@@ -76,7 +76,8 @@ function SignupPage() {
 
     const signInWithGoogle = async () => {
         try {
-            await signInWithPopup(auth, googleProvider);
+            const res = await signInWithPopup(auth, googleProvider);
+            dispatch({ type: 'LOGIN', payload: res.user });
             setSuccessfulReg(true);
             setTimeout(() => {
                 navigate('/');
@@ -88,7 +89,8 @@ function SignupPage() {
 
     const signInWithFacebook = async () => {
         try {
-            await signInWithPopup(auth, facebookProvider);
+            const res = await signInWithPopup(auth, facebookProvider);
+            dispatch({ type: 'LOGIN', payload: res.user });
             setSuccessfulReg(true);
             setTimeout(() => {
                 navigate('/');
@@ -100,7 +102,8 @@ function SignupPage() {
 
     const signInWithTwitter = async () => {
         try {
-            await signInWithPopup(auth, twitterProvider);
+            const res = await signInWithPopup(auth, twitterProvider);
+            dispatch({ type: 'LOGIN', payload: res.user });
             setSuccessfulReg(true);
             setTimeout(() => {
                 navigate('/');

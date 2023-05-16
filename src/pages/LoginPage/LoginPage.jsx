@@ -33,9 +33,8 @@ function LoginPage() {
 
     const signInWithGoogle = async () => {
         try {
-            await signInWithPopup(auth, googleProvider);
-            // const user = userCredential.user;
-            // dispatch({ type: 'LOGIN', payload: user })
+            const res = await signInWithPopup(auth, googleProvider);
+            dispatch({ type: 'LOGIN', payload: res.user })
             navigate('/');
         } catch (err) {
             console.error(err);
@@ -44,9 +43,8 @@ function LoginPage() {
 
     const signInWithFacebook = async () => {
         try {
-            await signInWithPopup(auth, facebookProvider);
-            // const user = userCredential.user;
-            // dispatch({ type: 'LOGIN', payload: user })
+            const res = await signInWithPopup(auth, facebookProvider);
+            dispatch({ type: 'LOGIN', payload: res.user })
             navigate('/');
         } catch (err) {
             console.error(err);
@@ -55,9 +53,8 @@ function LoginPage() {
 
     const signInWithTwitter = async () => {
         try {
-            await signInWithPopup(auth, twitterProvider);
-            // const user = userCredential.user;
-            // dispatch({ type: 'LOGIN', payload: user })
+            const res = await signInWithPopup(auth, twitterProvider);
+            dispatch({ type: 'LOGIN', payload: res.user })
             navigate('/');
         } catch (err) {
             console.error(err);
