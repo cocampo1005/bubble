@@ -2,7 +2,7 @@ import './HomePage.scss';
 import { HeroModel } from '../../components/HeroModel/HeroModel';
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, Stage } from '@react-three/drei';
+import { OrbitControls, Float } from '@react-three/drei';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -35,8 +35,8 @@ function HomePage() {
                         <Suspense>
                             {/* <Stage adjustCamera={0} intensity={0} shadows="contact"> */}
                             <Float
-                                speed={1.5} // Animation speed, defaults to 1
-                                rotationIntensity={3} // XYZ rotation intensity, defaults to 1
+                                speed={2} // Animation speed, defaults to 1
+                                rotationIntensity={4} // XYZ rotation intensity, defaults to 1
                                 floatIntensity={0.2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
                                 floatingRange={[-2, 2]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
                             >
