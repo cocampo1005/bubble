@@ -1,14 +1,14 @@
 import './SignupPage.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { auth, googleProvider, facebookProvider, twitterProvider } from '../../firebase';
 import { createUserWithEmailAndPassword, signInWithPopup } from '@firebase/auth';
-import { useState } from 'react';
-// import Modal from '../../components/Modal/Modal';
+import { useContext, useState } from 'react';
 import successIcon from '../../assets/icons/successful-icon-blue.svg';
 import googleIcon from '../../assets/icons/google-g.png';
 import facebookIcon from '../../assets/icons/facebook_f.png';
 import twitterIcon from '../../assets/icons/twitter-bird.png';
+import { AuthContext } from '../../context/AuthContext';
 
 
 function SignupPage() {
@@ -21,6 +21,10 @@ function SignupPage() {
     const [passwordError, setPasswordError] = useState('');
 
     const [successfulReg, setSuccessfulReg] = useState(false);
+
+    const navigate = useNavigate();
+
+    const { dispatch } = useContext(AuthContext);
 
     const validateEmail = (email) => {
         const emailRegEx = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
@@ -59,7 +63,13 @@ function SignupPage() {
                 setEmail('');
                 setPassword('');
                 setConfirmPassword('');
+                dispatch({ type: 'LOGIN', payload: res.user })
                 setSuccessfulReg(true);
+
+                setTimeout(() => {
+                    navigate('/');
+                }, 3000);
+                
             })
             .catch(err => console.error(err.message));
     }
@@ -67,6 +77,10 @@ function SignupPage() {
     const signInWithGoogle = async () => {
         try {
             await signInWithPopup(auth, googleProvider);
+            setSuccessfulReg(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 3000);
         } catch (err) {
             console.error(err);
         }
@@ -75,6 +89,10 @@ function SignupPage() {
     const signInWithFacebook = async () => {
         try {
             await signInWithPopup(auth, facebookProvider);
+            setSuccessfulReg(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 3000);
         } catch (err) {
             console.error(err);
         }
@@ -83,6 +101,10 @@ function SignupPage() {
     const signInWithTwitter = async () => {
         try {
             await signInWithPopup(auth, twitterProvider);
+            setSuccessfulReg(true);
+            setTimeout(() => {
+                navigate('/');
+            }, 3000);
         } catch (err) {
             console.error(err);
         }
@@ -107,9 +129,10 @@ function SignupPage() {
                         <input
                             className={`signup__email-input input ${emailError ? 'input-error' : ''}`}
                             name='email'
-                            type='text'
+                            type='email'
                             placeholder='john_doe@gmail.com'
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         ></input>
                     </div>
                     {/* <div className='signup__username input-container'>
@@ -129,6 +152,7 @@ function SignupPage() {
                             name='password'
                             type='password'
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         ></input>
                     </div>
                     <div className='signup__password-confirm input-container'>
@@ -138,6 +162,7 @@ function SignupPage() {
                             name='confirmPassword'
                             type='password'
                             onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
                         ></input>
                     </div>
                     <motion.button

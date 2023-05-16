@@ -1,17 +1,42 @@
 import './LoginPage.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { auth, googleProvider, facebookProvider, twitterProvider } from '../../firebase';
-import { signInWithPopup } from '@firebase/auth';
+import { signInWithPopup, signInWithEmailAndPassword } from '@firebase/auth';
 import googleIcon from '../../assets/icons/google-g.png';
 import facebookIcon from '../../assets/icons/facebook_f.png';
 import twitterIcon from '../../assets/icons/twitter-bird.png';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 function LoginPage() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
+
+    const { dispatch } = useContext(AuthContext);
+
+    const handleLoginEmailAndPassword = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((res) => {
+                dispatch({ type: 'LOGIN', payload: res.user })
+                navigate('/');
+            })
+            .catch((err) => {
+                const errorCode = err.code;
+                const errorMessage = err.message;
+            })
+    }
 
     const signInWithGoogle = async () => {
         try {
             await signInWithPopup(auth, googleProvider);
+            // const user = userCredential.user;
+            // dispatch({ type: 'LOGIN', payload: user })
+            navigate('/');
         } catch (err) {
             console.error(err);
         }
@@ -20,6 +45,9 @@ function LoginPage() {
     const signInWithFacebook = async () => {
         try {
             await signInWithPopup(auth, facebookProvider);
+            // const user = userCredential.user;
+            // dispatch({ type: 'LOGIN', payload: user })
+            navigate('/');
         } catch (err) {
             console.error(err);
         }
@@ -28,6 +56,9 @@ function LoginPage() {
     const signInWithTwitter = async () => {
         try {
             await signInWithPopup(auth, twitterProvider);
+            // const user = userCredential.user;
+            // dispatch({ type: 'LOGIN', payload: user })
+            navigate('/');
         } catch (err) {
             console.error(err);
         }
@@ -37,18 +68,26 @@ function LoginPage() {
         <section className="login">
             <div className="login__card">
                 <h1 className='login__header'>Login</h1>
-                <form className='login__form'>
+                <form className='login__form' onSubmit={handleLoginEmailAndPassword}>
                     {/* <div className='login__username input-container'>
                         <label className='login__username-label label'>USERNAME</label>
                         <input className='login__username-input input' type='text' ></input>
                     </div> */}
                     <div className='login__email input-container'>
                         <label className='login__email-label label'>EMAIL</label>
-                        <input className='login__email-input input' type='text' ></input>
+                        <input 
+                        className='login__email-input input' 
+                        type='email' 
+                        onChange={e=>setEmail(e.target.value)}
+                        ></input>
                     </div>
                     <div className='login__password input-container'>
                         <label className='login__password-label label'>PASSWORD</label>
-                        <input className='login__password-input input' type='text' ></input>
+                        <input 
+                        className='login__password-input input' 
+                        type='password' 
+                        onChange={e=>setPassword(e.target.value)}
+                        ></input>
                     </div>
                     <motion.button
                         className='login__form-button'
