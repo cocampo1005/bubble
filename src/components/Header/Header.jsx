@@ -61,7 +61,13 @@ function Header() {
                     }
 
                     <Link className='header__profile-avatar-link' to={'/profile'}>
-                        <img className='header__profile-avatar' src={bubbleAvatar} alt='avatar' />
+                        <motion.img
+                            className='header__profile-avatar'
+                            src={bubbleAvatar}
+                            alt='avatar'
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        />
                     </Link>
                 </div>
             </nav>
