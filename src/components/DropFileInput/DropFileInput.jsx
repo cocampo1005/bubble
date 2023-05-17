@@ -13,9 +13,15 @@ export default function DropFileInput() {
 
     const handleDrop = (e) => {
         e.preventDefault();
-        // console.log(e);
-        setFile(e.dataTransfer.files)
+        console.log(e);
         console.log(file);
+        setFile(e.dataTransfer.files)
+    }
+
+    const handleFileChange = (e) => {
+        console.log(e);
+        console.log(file);
+        setFile(e.target.files[0]);
     }
 
     if (file) return (
@@ -43,6 +49,7 @@ export default function DropFileInput() {
                         onDragOver={handleDragOver}
                         onDrop={handleDrop}
                         ref={inputRef}
+                        onChange={handleFileChange}
                     />
                 </motion.div>
             )}

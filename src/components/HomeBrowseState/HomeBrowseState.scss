@@ -1,3 +1,60 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
 .home-browse {
-    padding: 3rem;
+    padding: 1rem 3rem;
+
+    &__filters {
+        display: flex;
+        flex-direction: column;
+
+        &-heading {
+            display: flex;
+            padding-bottom: 1rem;
+        }
+
+        &-title {
+            padding-right: 1rem;
+        }
+
+        &-search {
+            padding: 0.75rem 1rem;
+            border-radius: 50px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.25);
+            width: 20%;
+            color: $color-white;
+
+            &::placeholder {
+                font-size: 0.9rem;
+                color: $color-white;
+            }
+        }
+
+        &-button {
+            &s {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                
+            }
+
+            @include button-pink;
+            padding: 0 0.75rem;
+            height: 2rem;
+            margin: 0 0.25rem;
+
+            &-reset {
+                @include button-blue;
+                margin-left: auto;
+            } 
+        }
+
+    }
+
+    &__catalog {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }

@@ -1,7 +1,7 @@
 import './SignupPage.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { auth, googleProvider, facebookProvider, twitterProvider } from '../../firebase';
+import { auth, googleProvider, facebookProvider, twitterProvider, db } from '../../firebase';
 import { createUserWithEmailAndPassword, signInWithPopup } from '@firebase/auth';
 import { useContext, useState } from 'react';
 import successIcon from '../../assets/icons/successful-icon-blue.svg';
@@ -9,11 +9,13 @@ import googleIcon from '../../assets/icons/google-g.png';
 import facebookIcon from '../../assets/icons/facebook_f.png';
 import twitterIcon from '../../assets/icons/twitter-bird.png';
 import { AuthContext } from '../../context/AuthContext';
+import { doc, setDoc } from 'firebase/firestore';
 
 
 function SignupPage() {
 
     const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -42,10 +44,35 @@ function SignupPage() {
         return isValid
     }
 
+    const createUserDocument = async (user) => {
+        console.log("Creating user document for user:", user);
+        console.log("Username:", username);  // Log the username here
+        console.log("Firestore instance:", db);
+        try {
+            const docRef = doc(db, "users", user.uid);
+            console.log("Document reference:", docRef);
+            await setDoc(docRef, {
+                username
+            });
+            console.log("User document created.");
+        } catch (err) {
+            console.error('Error creating user document', err);
+        }
+    };
+
+
+    const handleLogin = (res) => {
+        dispatch({ type: 'LOGIN', payload: res.user });
+        setSuccessfulReg(true);
+        setTimeout(() => {
+            navigate('/');
+        }, 3000);
+    }
+
     const register = async (e) => {
-        e.preventDefault()
-        setEmailError('')
-        setPasswordError('')
+        e.preventDefault();
+        setEmailError('');
+        setPasswordError('');
 
         if (!validateEmail(email)) {
             setEmailError('Invalid email format');
@@ -57,31 +84,25 @@ function SignupPage() {
             return;
         }
 
-        await createUserWithEmailAndPassword(auth, email, password)
-            .then((res) => {
-                console.log(res.user);
-                setEmail('');
-                setPassword('');
-                setConfirmPassword('');
-                dispatch({ type: 'LOGIN', payload: res.user });
-                setSuccessfulReg(true);
-
-                setTimeout(() => {
-                    navigate('/');
-                }, 3000);
-                
-            })
-            .catch(err => console.error(err.message));
+        try {
+            const res = await createUserWithEmailAndPassword(auth, email, password);
+            console.log("User created with email and password:", res.user);
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+            await createUserDocument(res.user);
+            handleLogin(res);
+        } catch (err) {
+            console.error('Error registering user', err.message);
+        }
     }
+
 
     const signInWithGoogle = async () => {
         try {
             const res = await signInWithPopup(auth, googleProvider);
-            dispatch({ type: 'LOGIN', payload: res.user });
-            setSuccessfulReg(true);
-            setTimeout(() => {
-                navigate('/');
-            }, 3000);
+            createUserDocument(res.user);
+            handleLogin(res);
         } catch (err) {
             console.error(err);
         }
@@ -90,11 +111,8 @@ function SignupPage() {
     const signInWithFacebook = async () => {
         try {
             const res = await signInWithPopup(auth, facebookProvider);
-            dispatch({ type: 'LOGIN', payload: res.user });
-            setSuccessfulReg(true);
-            setTimeout(() => {
-                navigate('/');
-            }, 3000);
+            createUserDocument(res.user);
+            handleLogin(res);
         } catch (err) {
             console.error(err);
         }
@@ -103,11 +121,8 @@ function SignupPage() {
     const signInWithTwitter = async () => {
         try {
             const res = await signInWithPopup(auth, twitterProvider);
-            dispatch({ type: 'LOGIN', payload: res.user });
-            setSuccessfulReg(true);
-            setTimeout(() => {
-                navigate('/');
-            }, 3000);
+            createUserDocument(res.user);
+            handleLogin(res);
         } catch (err) {
             console.error(err);
         }
@@ -138,16 +153,16 @@ function SignupPage() {
                             required
                         ></input>
                     </div>
-                    {/* <div className='signup__username input-container'>
+                    <div className='signup__username input-container'>
                         <label className='signup__username-label label'>USERNAME</label>
                         <input
                             className='signup__username-input input'
                             name='username'
                             type='text'
-                            placeholder='Johndoe67'
-                        // onChange={(e) => setUsername(e.target.value)}
+                            placeholder='johndoe67'
+                            onChange={(e) => setUsername(e.target.value)}
                         ></input>
-                    </div> */}
+                    </div>
                     <div className='signup__password input-container'>
                         <label className='signup__password-label label'>PASSWORD</label>
                         <input
