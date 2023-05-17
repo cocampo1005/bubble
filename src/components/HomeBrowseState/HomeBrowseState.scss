@@ -36,13 +36,18 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
-                
             }
 
             @include button-pink;
             padding: 0 0.75rem;
             height: 2rem;
             margin: 0 0.25rem;
+            
+            &.selected {
+                background-image: linear-gradient(rgb(83, 13, 46), rgb(170, 40, 105));
+                border: 1px solid $color-fucshia;
+                
+            }
 
             &-reset {
                 @include button-blue;
@@ -57,4 +62,7 @@
         justify-content: space-around;
         flex-wrap: wrap;
     }
+}
+.home-browse__filters-button.selected {
+    background-color: black;
 }

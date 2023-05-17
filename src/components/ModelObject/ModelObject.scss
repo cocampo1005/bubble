@@ -12,6 +12,11 @@
         height: 250px;
         border-radius: 50%;
         margin-bottom: 1rem;
+
+        &--large {
+            width: 500px;
+            height: 500px;
+        }
         
         & iframe {
             border: 5px $color-fucshia solid;
@@ -28,6 +33,7 @@
             color: lightseagreen;
             color: $color-lightblue;
             font-variation-settings: 'wght' 600;
+            cursor: pointer;
         }
         
         &-creator {

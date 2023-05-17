@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './HomeBrowseState.scss';
 import ModelObject from '../ModelObject/ModelObject';
 import models from '../../data/modelsData.json';
+import { motion } from 'framer-motion';
 
 export default function HomeBrowseState() {
   const [input, setInput] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
+  const [selected, setSelected] = useState('');
   const [filteredModels, setFilteredModels] = useState(models);
 
   useEffect(() => {
@@ -21,13 +23,15 @@ export default function HomeBrowseState() {
     setInput(event.target.value);
   }
 
-  const handleTagClick = (tags) => {
+  const handleTagClick = (tags, selectedButton) => {
     setSelectedTags(tags);
+    setSelected(selectedButton)
   }
 
   const handleResetFilter = () => {
     setInput('');
     setSelectedTags([]);
+    setSelected('');
   }
 
   return (
@@ -39,54 +43,79 @@ export default function HomeBrowseState() {
           <h1 className='home-browse__filters-title'>Filters:</h1>
           <input
             className='home-browse__filters-search'
-            type="text" 
+            type="text"
             placeholder="Filter by tag..."
             onChange={handleInputChange}
           />
-          <button className='home-browse__filters-button-reset' onClick={handleResetFilter}>Reset Filter</button>
+          <motion.button
+            className='home-browse__filters-button-reset'
+            onClick={handleResetFilter}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Reset Filter
+          </motion.button>
         </div>
 
         <div className='home-browse__filters-buttons'>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['realistic'])}>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'realistic' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['realistic'], 'realistic')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Realistic
-          </button>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['stylized'])}>
+          </motion.button>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'stylized' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['stylized'], 'stylized')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Stylized
-          </button>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['animal'])}>
+          </motion.button>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'animal' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['animal'], 'animal')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Animals
-          </button>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['car', 'vehicle', 'ship'])}>
+          </motion.button>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'car' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['car', 'vehicle', 'ship'], 'car')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Cars & Vehicles
-          </button>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['abstract', 'art'])}>
+          </motion.button>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'abstract' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['abstract', 'art'], 'abstract')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Art & Abstarct
-          </button>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['food', 'drink'])}>
+          </motion.button>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'food' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['food', 'drink'], 'food')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Food & Drink
-          </button>
-          <button
-            className='home-browse__filters-button'
-            onClick={() => handleTagClick(['character'])}>
+          </motion.button>
+          <motion.button
+            className={`home-browse__filters-button ${selected === 'character' ? 'selected' : ''}`}
+            onClick={() => handleTagClick(['character'], 'character')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Characters
-          </button>
+          </motion.button>
         </div>
       </div>
-        
-
-
 
       <div className='home-browse__catalog'>
         {filteredModels.slice(0, 30).map(model => (

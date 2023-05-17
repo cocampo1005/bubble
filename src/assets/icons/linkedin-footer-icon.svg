@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:#EC008C;}
+	.st3{fill:#DF3275;}
+	.st4{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill:#15ACCB;}
+	.st6{clip-path:url(#SVGID_00000106848635612613466460000002665261297284001955_);}
+	.st7{fill:url(#SVGID_00000023964656497079318620000001057924948411931291_);}
+	.st8{fill:none;stroke:#FFFFFF;stroke-width:0.25;stroke-linecap:round;stroke-miterlimit:10;}
+	.st9{fill:#727373;}
+	.st10{fill:#2B2B2B;}
+	.st11{clip-path:url(#SVGID_00000101099198915367115160000005099671455105494183_);}
+	.st12{fill:url(#SVGID_00000122706452570042149570000011303787205734767751_);}
+	.st13{clip-path:url(#SVGID_00000091708194969449172290000016732818155085748097_);}
+	.st14{fill:url(#SVGID_00000062911576751724465280000006928223727793308043_);}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="glTF_File">
+</g>
+<g id="Logo">
+</g>
+<g id="Favicon">
+</g>
+<g id="Bubble_Avatar">
+	<g>
+		<path class="st3" d="M5.59,7.71H0.77c-0.21,0-0.39,0.17-0.39,0.39v15.51c0,0.21,0.17,0.39,0.39,0.39h4.82
+			c0.21,0,0.39-0.17,0.39-0.39V8.1C5.97,7.89,5.8,7.71,5.59,7.71z"/>
+		<path class="st3" d="M3.18,0C1.43,0,0,1.43,0,3.18c0,1.76,1.43,3.18,3.18,3.18c1.75,0,3.18-1.43,3.18-3.18
+			C6.36,1.43,4.93,0,3.18,0z"/>
+		<path class="st3" d="M17.84,7.33c-1.94,0-3.37,0.83-4.23,1.78V8.1c0-0.21-0.17-0.39-0.39-0.39H8.61c-0.21,0-0.39,0.17-0.39,0.39
+			v15.51c0,0.21,0.17,0.39,0.39,0.39h4.81c0.21,0,0.39-0.17,0.39-0.39v-7.68c0-2.59,0.7-3.59,2.5-3.59c1.96,0,2.11,1.62,2.11,3.73
+			v7.54c0,0.21,0.17,0.39,0.39,0.39h4.81c0.21,0,0.39-0.17,0.39-0.39V15.1C24,11.26,23.27,7.33,17.84,7.33z"/>
+	</g>
+</g>
+</svg>

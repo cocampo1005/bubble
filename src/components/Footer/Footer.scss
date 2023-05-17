@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+
+    &__logo {
+        cursor: pointer;
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 19rem;
+
+        &-icon {
+            // width: 2rem;
+            height: 1.5rem;
+        }
+    }
+}

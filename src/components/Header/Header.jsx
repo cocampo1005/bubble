@@ -17,7 +17,7 @@ function Header() {
     const handleLogout = async () => {
         try {
             await signOut(auth);
-            dispatch({ type: 'LOGOUT', payload:{} })
+            dispatch({ type: 'LOGOUT', payload: {} })
             navigate('/');
         } catch (err) {
             console.log(err);
@@ -27,7 +27,13 @@ function Header() {
     return (
         <header className='header'>
             <Link className='header__logo--link' to={'/'}>
-                <img className='header__logo' src={logo} alt='bubble logo' />
+                <motion.img
+                    className='header__logo'
+                    src={logo}
+                    alt='bubble logo'
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                />
             </Link>
             <nav className='header__nav'>
                 <input className='header__search' placeholder='Search 3D Models' />

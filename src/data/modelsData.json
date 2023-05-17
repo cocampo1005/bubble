@@ -214,7 +214,7 @@
         "creator": "Moon", 
         "name": "Rose Tea Witch",
         "src": "https://sketchfab.com/models/e6f980dbd67c4f65b2ed44f74fdf914c/embed",
-        "tags": ["flowers", "stylistic", "pink", "tea", "witch"]
+        "tags": ["flowers", "stylistic", "pink", "tea", "witch", "character"]
     },
     {
         "id": 32,
@@ -243,5 +243,75 @@
         "name": "Flying Dragon",
         "src": "https://sketchfab.com/models/2fdae78e272c4994bb67336a289f11ef/embed",
         "tags": ["dragon", "realistic", "flying"]
+    },
+    {
+        "id": 36,
+        "creator": "ing.neko", 
+        "name": "Honkai Star Rail",
+        "src": "https://sketchfab.com/models/0a4c3224af2047689b41e8febbc76c9d/embed",
+        "tags": ["character", "stylized", "bow"]
+    },
+    {
+        "id": 37,
+        "creator": "DEDROX", 
+        "name": "Shopping Crock",
+        "src": "https://sketchfab.com/models/4ee5bcd0034d4c3189816717ff283f17/embed",
+        "tags": ["character", "stylized", "animal"]
+    },
+    {
+        "id": 38,
+        "creator": "B.Cottle", 
+        "name": "Picnic Study",
+        "src": "https://sketchfab.com/models/3a5bc860dbe0447fbcac9db995b02093/embed",
+        "tags": ["food", "stylized"]
+    },
+    {
+        "id": 39,
+        "creator": "cocampo1005", 
+        "name": "Cyberpunk Mokey King",
+        "src": "https://sketchfab.com/models/c2017a03e422463bbd6d50034636944d/embed",
+        "tags": ["character", "stylized", "cyberpunk"]
+    },
+    {
+        "id": 40,
+        "creator": "cocampo1005", 
+        "name": "Valerie | Tech/Noir",
+        "src": "https://sketchfab.com/models/51efa43c65a340659fa9d147e5608d4c/embed",
+        "tags": ["character", "stylized", "cyberpunk"]
+    },
+    {
+        "id": 41,
+        "creator": "cocampo1005", 
+        "name": "Aastronaut",
+        "src": "https://sketchfab.com/models/7edfa011aa7c4c91a4c0144ac1f185a0/embed",
+        "tags": ["character", "stylized", "space"]
+    },
+    {
+        "id": 42,
+        "creator": "cocampo1005", 
+        "name": "Skitterling",
+        "src": "https://sketchfab.com/models/3b1551d6a3c64030b811a2d3bc7cbdc5/embed",
+        "tags": ["character", "stylized", "animal"]
+    },
+    {
+        "id": 43,
+        "creator": "cocampo1005", 
+        "name": "Space Jam Lebron",
+        "src": "https://sketchfab.com/models/57f1293433494767b510d62a02aaef55/embed",
+        "tags": ["character", "stylized", "sports", "ball"]
+    },
+    {
+        "id": 44,
+        "creator": "cocampo1005", 
+        "name": "Journey Character",
+        "src": "https://sketchfab.com/models/147b14b62268478da7e59fa36c949bae/embed",
+        "tags": ["character", "stylized", "game", "desert"]
+    },
+    {
+        "id": 45,
+        "creator": "cocampo1005", 
+        "name": "Black Cat Magician",
+        "src": "https://sketchfab.com/models/ee32282219ab40dbbad42b6134fb26ff/embed",
+        "tags": ["character", "stylized", "cat", "witch"]
     }
 ]

@@ -49,5 +49,10 @@
     &__mesh {
         width: 40%;
         height: 20rem;
+        cursor: grab;
+
+        :active {
+            cursor: grabbing;
+        }
     }
 }

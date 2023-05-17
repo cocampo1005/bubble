@@ -3,19 +3,10 @@
 @mixin button-pink {
   padding: 0.75rem 1.5rem;
   background-image: linear-gradient( $color-fucshia, rgb(143, 25, 84));
-  background-color: $color-fucshia;
   border: none;
   border-radius: 30px;
   color: $color-white;
   font-variation-settings: "wght" 600;
-
-  // &:hover {
-  //   background-color: $color-fucshia-hover;
-  // }
-
-  // &:active {
-  //   background-color: $color-lightblue;
-  // }
 }
 
 @mixin button-blue {

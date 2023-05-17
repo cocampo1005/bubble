@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import { AuthContext } from "./context/AuthContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/profile" element={<RequireAuth><ProfilePage /></RequireAuth>}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
