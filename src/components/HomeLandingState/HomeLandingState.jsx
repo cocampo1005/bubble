@@ -32,7 +32,6 @@ function HomeLandingState() {
                             <pointLight color={'magenta'} intensity={3} position={[-10, -20, 10]} />
                         </group>
                         <Suspense>
-                            {/* <Stage adjustCamera={0} intensity={0} shadows="contact"> */}
                             <Float
                                 speed={2} // Animation speed, defaults to 1
                                 rotationIntensity={4} // XYZ rotation intensity, defaults to 1
@@ -42,12 +41,13 @@ function HomeLandingState() {
                                 <HeroModel castShadow />
                                 <OrbitControls enablePan={false} enableZoom={false} enableRotate={true} />
                             </Float>
-                            {/* </Stage> */}
                         </Suspense>
                     </Canvas>
                 </div>
             </section>
-
+            <section>
+                
+            </section>
         </div>
     )
 }

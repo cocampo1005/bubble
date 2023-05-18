@@ -104,7 +104,6 @@ export default function DropFileInput({ closeModal }) {
         </div>
     )
 
-
     return (
         <>
             {!file ?
@@ -164,7 +163,6 @@ export default function DropFileInput({ closeModal }) {
                         whileTap={{ scale: 0.9 }}
                     >Upload</motion.button>
                 </form>
-
             }
         </>
     )
