@@ -48,13 +48,13 @@
 .file-uploaded {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 1rem 5rem;
 
   &__file {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 
     &-icon {
       width: 5rem;
@@ -65,7 +65,41 @@
     }
   }
 
-  &__name {
+  &-label {
+    color: $color-white;
+    font-size: 1.1rem;
+    padding-bottom: 0.25rem;
+  }
+
+  &-input {
     @include input-field;
+    margin-bottom: 1rem;
+    resize: none;
+  }
+
+  &__sub-button {
+    @include button-blue;
+    width: 60%;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+}
+
+.successful-upload {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__heading {
+    color: $color-white;
+    font-variation-settings: 'wght' 500;
+    padding-bottom: 2rem;
+  }
+
+  &__icon {
+    width: 5rem;
   }
 }

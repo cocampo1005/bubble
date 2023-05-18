@@ -5,16 +5,30 @@ import { motion } from 'framer-motion';
 import { ref, uploadBytes } from "firebase/storage";
 import { storage } from '../../firebase';
 import { TagInput } from '../TagInput/TagInput';
+import successIcon from '../../assets/icons/successful-icon-blue.svg';
 
-export default function DropFileInput() {
+export default function DropFileInput({ closeModal }) {
+
+    const inputRef = useRef();
     const [file, setFile] = useState(null);
     const [fileName, setFileName] = useState("");
+    const [successfulUpload, setSuccessfulUpload] = useState(false);
     const [metadata, setMetadata] = useState({
         name: "",
         description: "",
         tags: [],
     });
-    const inputRef = useRef();
+
+    const resetState = () => {
+        setFile(null);
+        setFileName("");
+        setSuccessfulUpload(false);
+        setMetadata({
+            name: "",
+            description: "",
+            tags: [],
+        });
+    };
 
     const handleDragOver = (e) => {
         e.preventDefault();
@@ -24,15 +38,15 @@ export default function DropFileInput() {
         e.preventDefault();
         console.log(e);
         console.log(file);
-        setFile(e.dataTransfer.files)
+        setFile(e.dataTransfer.files[0])
         setFileName(e.dataTransfer.files[0].name);
     }
 
     const handleFileChange = (e) => {
         console.log(e);
-        console.log(file);
         setFile(e.target.files[0]);
         setFileName(e.target.files[0].name);
+        console.log(file);
     }
 
     const handleMetadataChange = (e) => {
@@ -43,9 +57,18 @@ export default function DropFileInput() {
         const name = new Date().getTime() + file.name;
         const storageRef = ref(storage, name);
 
-        uploadBytes(storageRef, file).then((snapshot) => {
-            console.log('Uploaded a file!');
-        });
+        const uploadMetadata = {
+            customMetadata: {
+                name: metadata.name,
+                description: metadata.description,
+                tags: JSON.stringify(metadata.tags),
+            },
+        };
+
+        uploadBytes(storageRef, file, uploadMetadata).then(() => {
+            console.log('Uploaded a file with metadata!');
+            setSuccessfulUpload(true);
+        }).catch(err => console.log(err));
     };
 
     const handleTagAdd = (tag) => {
@@ -67,9 +90,20 @@ export default function DropFileInput() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(file, metadata);
-        uploadFile();
-    }
-    // Here you can implement the function to upload the file and its metadata to the db.
+        uploadFile()
+        setTimeout(() => {
+            resetState();
+            closeModal();
+        }, 4000);
+    };
+
+    if (successfulUpload) return (
+        <div className='successful-upload'>
+            <h1 className='successful-upload__heading'>Your model was successfully uploaded!</h1>
+            <img className='successful-upload__icon' src={successIcon} />
+        </div>
+    )
+
 
     return (
         <>
@@ -97,9 +131,9 @@ export default function DropFileInput() {
                         <img className='file-uploaded__file-icon' src={glTFIcon} alt='glTF file icon' />
                         <p className='file-uploaded__file-name'>{fileName}</p>
                     </div>
-                    <label className='file-uploaded__name-label'>Model Name</label>
+                    <label className='file-uploaded__name-label file-uploaded-label'>Model Name</label>
                     <input
-                        className='file-uploaded__name'
+                        className='file-uploaded__name file-uploaded-input'
                         type="text"
                         name="name"
                         value={metadata.name}
@@ -107,25 +141,28 @@ export default function DropFileInput() {
                         placeholder="Name your model"
                         required
                     />
-                    <label className='file-uploaded__description-label'>Model Description</label>
+                    <label className='file-uploaded__description-label file-uploaded-label'>Model Description</label>
                     <textarea
-                        className='file-uploaded__description'
+                        className='file-uploaded__description file-uploaded-input'
                         name="description"
                         value={metadata.description}
                         onChange={handleMetadataChange}
                         placeholder="Describe your model"
+                        wrap='hard'
                         required
                     />
-                    <label className='file-uploaded__tags-label'>Model Tags</label>
+                    <label className='file-uploaded__tags-label file-uploaded-label'>Model Tags</label>
                     <TagInput
                         tags={metadata.tags}
                         onAddTag={handleTagAdd}
                         onRemoveTag={handleTagRemove}
                     />
-                    <button
+                    <motion.button
                         className='file-uploaded__sub-button'
                         type="submit"
-                    >Upload</button>
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                    >Upload</motion.button>
                 </form>
 
             }

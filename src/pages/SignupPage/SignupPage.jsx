@@ -140,7 +140,6 @@ function SignupPage() {
             className='successful-reg'>
             <h1 className='successful-reg__heading'>Registration Successful!</h1>
             <img className='successful-reg__icon' src={successIcon} />
-
         </motion.div>
     )
 

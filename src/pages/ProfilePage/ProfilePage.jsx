@@ -60,7 +60,7 @@ function ProfilePage() {
           </motion.button>
           <Modal open={modalOpen} handleClose={close}>
 
-            <DropFileInput />
+            <DropFileInput closeModal={close} />
 
             <div className="modal__buttons">
               <motion.button
