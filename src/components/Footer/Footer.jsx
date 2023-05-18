@@ -17,7 +17,7 @@ export default function Footer() {
                 className='footer__logo'
                 src={logo}
                 alt='bubble logo'
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
             />
             <div className='footer__socials'>
