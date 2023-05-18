@@ -9,7 +9,7 @@ import googleIcon from '../../assets/icons/google-g.png';
 import facebookIcon from '../../assets/icons/facebook_f.png';
 import twitterIcon from '../../assets/icons/twitter-bird.png';
 import { AuthContext } from '../../context/AuthContext';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 
 
 function SignupPage() {
@@ -46,13 +46,20 @@ function SignupPage() {
 
     const createUserDocument = async (user) => {
         console.log("Creating user document for user:", user);
-        console.log("Username:", username);  // Log the username here
+        console.log("Username:", username);
         console.log("Firestore instance:", db);
         try {
             const docRef = doc(db, "users", user.uid);
             console.log("Document reference:", docRef);
             await setDoc(docRef, {
-                username
+                username,
+                avatar: "",
+                followers: 0,
+                following: 0,
+                about: "",
+                skills: "",
+                timestamp: serverTimestamp(),
+                models: [],
             });
             console.log("User document created.");
         } catch (err) {

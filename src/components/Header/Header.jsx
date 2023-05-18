@@ -36,7 +36,7 @@ function Header() {
                 />
             </Link>
             <nav className='header__nav'>
-                <input className='header__search' placeholder='Search 3D Models' />
+                {/* <input className='header__search' placeholder='Search 3D Models' /> */}
                 <div className='header__profile'>
 
                     {!currentUser ?
@@ -61,7 +61,13 @@ function Header() {
                     }
 
                     <Link className='header__profile-avatar-link' to={'/profile'}>
-                        <img className='header__profile-avatar' src={bubbleAvatar} alt='avatar' />
+                        <motion.img
+                            className='header__profile-avatar'
+                            src={currentUser?.photoURL || bubbleAvatar}
+                            alt='avatar'
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        />
                     </Link>
                 </div>
             </nav>

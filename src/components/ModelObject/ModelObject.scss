@@ -1,43 +1,46 @@
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/variables" as *;
 
 .object {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    
-    &__container {
-        position: relative;
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 
-        &--large {
-            width: 500px;
-            height: 500px;
-        }
-        
-        & iframe {
-            border: 5px $color-fucshia solid;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
+  &__container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: width 0.75s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      height 0.75s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    &--large {
+      width: 500px;
+      height: 500px;
     }
 
-    &__info {
-        font-size: 1rem;
-        &-name {
-            color: lightseagreen;
-            color: $color-lightblue;
-            font-variation-settings: 'wght' 600;
-            cursor: pointer;
-        }
-        
-        &-creator {
-            color: $color-fucshia;
-        }
+    & iframe {
+      border: 5px $color-fucshia solid;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
     }
+  }
+
+  &__info {
+    font-size: 1rem;
+
+    &-name {
+      color: lightseagreen;
+      color: $color-lightblue;
+      font-variation-settings: "wght" 600;
+      cursor: pointer;
+    }
+
+    &-creator {
+      color: $color-fucshia;
+    }
+  }
 }

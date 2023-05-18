@@ -11,7 +11,7 @@
         "creator": "Kiiba",
         "name": "Boba Bears",
         "src": "https://sketchfab.com/models/a5a882fe9df9400a892a8020a6685dbb/embed",
-        "tags": ["food", "boba", "bears", "cute", "animal"]
+        "tags": ["food", "boba", "bears", "cute"]
     },
     {
         "id": 3,
@@ -39,7 +39,7 @@
         "creator": "carlcapu9",
         "name": "Korean Store Front",
         "src": "https://sketchfab.com/models/59ab89e8a6784f20a8f561f8804439d5/embed",
-        "tags": ["asian", "shop", "architecture"]
+        "tags": ["asian", "shop", "architecture", "realistic"]
     },
     {
         "id": 7,
@@ -313,5 +313,194 @@
         "name": "Black Cat Magician",
         "src": "https://sketchfab.com/models/ee32282219ab40dbbad42b6134fb26ff/embed",
         "tags": ["character", "stylized", "cat", "witch"]
+    }, 
+    {
+        "id": 46,
+        "creator": "d.zybura", 
+        "name": "Plant Monster",
+        "src": "https://sketchfab.com/models/4806956e7e2d40cc8d5960e379f618bf/embed",
+        "tags": ["plant", "stylized", "creature"]
+    }, 
+    {
+        "id": 47,
+        "creator": "Selfburning", 
+        "name": "Worms",
+        "src": "https://sketchfab.com/models/bd8133e9bef84d979e70007d6bf264f1/embed",
+        "tags": ["abstract", "person"]
+    }, 
+    {
+        "id": 48,
+        "creator": "cmzw", 
+        "name": "Kintsugi",
+        "src": "https://sketchfab.com/models/8c83e826eeb54139baaf6f94a9098db0/embed",
+        "tags": ["abstract", "sphere", "ball"]
+    },
+    {
+        "id": 49,
+        "creator": "vustudios", 
+        "name": "Seawead Set",
+        "src": "https://sketchfab.com/models/5c5d2754b9084d0687033dd2359b62f5/embed",
+        "tags": ["stylized", "game", "plant"]
+    },
+    {
+        "id": 50,
+        "creator": "Stylized Box", 
+        "name": "Juicy Peach",
+        "src": "https://sketchfab.com/models/42b280b372a543dca4c0f8a9e519efcc/embed",
+        "tags": ["stylized", "fruit", "food"]
+    },
+    {
+        "id": 51,
+        "creator": "Tino Hunda", 
+        "name": "Sci-Fi Kunai",
+        "src": "https://sketchfab.com/models/10f0839740154af49a14a9c7fc24dd96/embed",
+        "tags": ["realistic", "weapon"]
+    },
+    {
+        "id": 52,
+        "creator": "vattghernca", 
+        "name": "Sci-Fi Gun",
+        "src": "https://sketchfab.com/models/38506a7d7f1d4a94835bd59e1a51d185/embed",
+        "tags": ["gun", "game", "weapon"]
+    },
+    {
+        "id": 53,
+        "creator": "Frostoise", 
+        "name": "AR-T64",
+        "src": "https://sketchfab.com/models/fa5c9e6e0d894da68aa964b707a418b3/embed",
+        "tags": ["gun", "game", "weapon", "realistic"]
+    },
+    {
+        "id": 54,
+        "creator": "Dmitriy Azarenok", 
+        "name": "Dagger",
+        "src": "https://sketchfab.com/models/a4756f0814da43eea1f4659f60a18b77/embed",
+        "tags": ["sword", "game", "weapon", "stylized"]
+    },
+    {
+        "id": 55,
+        "creator": "Tlal", 
+        "name": "Leafeon",
+        "src": "https://sketchfab.com/models/ae38fed9fde442d191a1e61e59cc2651/embed",
+        "tags": ["pokemon", "green", "stylized"]
+    },
+    {
+        "id": 56,
+        "creator": "Jesus Orgaz", 
+        "name": "Pokeball Home",
+        "src": "https://sketchfab.com/models/c266163bd310411bac727783e4c79c4a/embed",
+        "tags": ["pokemon", "sphere", "ball", "stylized"]
+    },
+    {
+        "id": 57,
+        "creator": "Zalkan", 
+        "name": "Sleeping Pikachu",
+        "src": "https://sketchfab.com/models/a6942cb1524a45548210947c2164306d/embed",
+        "tags": ["pokemon", "electric", "stylized"]
+    },
+    {
+        "id": 58,
+        "creator": "Zalkan", 
+        "name": "Magikarp",
+        "src": "https://sketchfab.com/models/c698e5d0ba164a43b6311fda8ddb85ea/embed",
+        "tags": ["pokemon", "fish", "stylized"]
+    },
+    {
+        "id": 59,
+        "creator": "Andy (Pandabox)", 
+        "name": "The Pokemon Ghost-Bowl",
+        "src": "https://sketchfab.com/models/8a90e333da4149ef8f74864282bbe4b1/embed",
+        "tags": ["pokemon", "ghost", "stylized", "purple"]
+    },
+    {
+        "id": 60,
+        "creator": "Poke-Scooter", 
+        "name": "artsysmart",
+        "src": "https://sketchfab.com/models/70b66fd8efc04e62a9e72bc7c05bd154/embed",
+        "tags": ["pokemon", "vehicle", "stylized", "red"]
+    },
+    {
+        "id": 61,
+        "creator": "Teiva Roche", 
+        "name": "Wooloo",
+        "src": "https://sketchfab.com/models/ce90d236b23143959758463a168b7443/embed",
+        "tags": ["pokemon", "space", "stylized"]
+    },
+    {
+        "id": 62,
+        "creator": "Nicole Davis", 
+        "name": "Magikarp Taiyaki",
+        "src": "https://sketchfab.com/models/5c21eff4aab04a10828a37a29f72899c/embed",
+        "tags": ["pokemon", "food", "stylized"]
+    },
+    {
+        "id": 63,
+        "creator": "graograman", 
+        "name": "Pikachu VS Raichu",
+        "src": "https://sketchfab.com/models/c461e00264ab457e964a3755b81b5f8f/embed",
+        "tags": ["pokemon", "electric"]
+    },
+    {
+        "id": 64,
+        "creator": "IgorG", 
+        "name": "Jigglypuff",
+        "src": "https://sketchfab.com/models/846a4936fa3f45cf840d25cbd7382e85/embed",
+        "tags": ["pokemon", "stylistic", "game"]
+    },
+    {
+        "id": 65,
+        "creator": "Alexander Antipov", 
+        "name": "Human Eye",
+        "src": "https://sketchfab.com/models/417cbd1aac554ea189966250b784ab6f/embed",
+        "tags": ["eye", "realistic", "sphere", "ball"]
+    },
+    {
+        "id": 66,
+        "creator": "SeppeHauspie", 
+        "name": "Realistic Pokeball",
+        "src": "https://sketchfab.com/models/9eb80f026a8947fda580abd229d4f9c8/embed",
+        "tags": ["pokemon", "realistic", "sphere", "ball"]
+    },
+    {
+        "id": 67,
+        "creator": "Skyhandzan", 
+        "name": "The Rock Bust",
+        "src": "https://sketchfab.com/models/g1PbWfEYoaqbdYDPof6DjGlWn0Y/embed",
+        "tags": ["character", "realistic", "rock"]
+    },
+    {
+        "id": 68,
+        "creator": "AVRcontent", 
+        "name": "Pig",
+        "src": "https://sketchfab.com/models/f0dee8c93bea48f5845bd5e5b532706a/embed",
+        "tags": ["animal", "realistic", "pig"]
+    },
+    {
+        "id": 69,
+        "creator": "Fred Drabbie", 
+        "name": "Realistic Shrek",
+        "src": "https://sketchfab.com/models/73e3231ac63348f3b10a8fc4c84545d9/embed",
+        "tags": ["character", "realistic", "shrek"]
+    },
+    {
+        "id": 70,
+        "creator": "Grand Dog Studio", 
+        "name": "Apple",
+        "src": "https://sketchfab.com/models/60f8a7e073e4497dbf638b51f101cb43/embed",
+        "tags": ["fruit", "realistic", "apple", "food"]
+    },
+    {
+        "id": 71,
+        "creator": "astarael", 
+        "name": "Charizard",
+        "src": "https://sketchfab.com/models/6df7ccb0159e4bafb544f068c499b762/embed",
+        "tags": ["pokemon", "realistic", "dragon"]
+    },
+    {
+        "id": 72,
+        "creator": "Virtual Studio", 
+        "name": "iPhone X",
+        "src": "https://sketchfab.com/models/02f12869e95e4695a15e3a611398742b/embed",
+        "tags": ["iphone", "realistic", "product"]
     }
 ]
